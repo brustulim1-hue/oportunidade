@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiago | Em Busca de Oportunidades</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+
+        .container {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            max-width: 500px; /* Aumentei um pouco para acomodar melhor o texto */
+            width: 90%;
+            text-align: center;
+        }
+
+        h1 { margin-bottom: 1.5rem; font-size: 1.3rem; line-height: 1.4; color: #0f172a; }
+        
+        .texto-perfil { 
+            text-align: left; /* Texto de perfil fica melhor alinhado à esquerda */
+            color: #475569; 
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .lista-expertise {
+            margin: 1rem 0;
+            padding-left: 1.2rem;
+            list-style-type: none;
+        }
+
+        .lista-expertise li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .lista-expertise li::before {
+            content: "▹";
+            position: absolute;
+            left: -1.2rem;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .status-badge {
+            background: #dcfce7;
+            color: #166534;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 1rem; /* Espaço após o badge */
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 0.8rem;
+            margin-top: 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover { transform: scale(1.02); }
+
+        .pix-section {
+            background: #f1f5f9;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .pix-code {
+            font-family: monospace;
+            font-size: 0.85rem;
+            word-break: break-all;
+            background: #cbd5e1;
+            padding: 0.6rem;
+            border-radius: 0.25rem;
+            margin: 10px 0;
+            display: block;
+        }
+
+        .copy-feedback {
+            font-size: 0.75rem;
+            color: #059669;
+            display: none;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Agora, preciso de 30 segundos da sua atenção para algo que fará toda a diferença.</h1>
+    
+    <div class="pix-section">	
+        <div class="status-badge">Primeira maneira de de fazer a diferença!!!</div>
+        <br> <small>Aceitamos gorjetas em forma de sorrisos ou trocados. Os dois ajudam muito!</small>
+        <strong style="display: block; margin: 15px 0 5px 0;">Contribua via PIX</strong>
+        <span class="pix-code" id="pixCode">22390868827</span>
+        <button class="btn" style="background: #334155; color: white; margin-top: 5px;" onclick="copyPix()">
+            Copiar Chave PIX
+        </button>
+        <div id="feedback" class="copy-feedback">✔ Copiado para a área de transferência!</div>
+    </div>
+
+    <div class="status-badge">Segunda maneira e não menos importante.</div>
+    <br> <div class="texto-perfil">
+        <p>Sou <strong>Tiago Brustulim Bossolani</strong>, especialista em análise estratégica com mais de 15 anos de experiência em gestão de processos e inteligência de dados.</p>
+        
+        <p>Minha carreira é marcada pela atuação em grandes players, como a <strong>Seara</strong>, onde liderei a criação de indicadores de desempenho e o controle orçamentário para suporte à tomada de decisão gerencial.</p>
+
+        <p>Tenho expertise em:</p>
+        <ul class="lista-expertise">
+            <li><strong>Business Intelligence:</strong> Criação de dashboards dinâmicos que integram múltiplas fontes de dados.</li>
+            <li><strong>Gestão Financeira:</strong> Controle de budget, análise de custos e negociação estratégica de contratos.</li>
+            <li><strong>Inovação Operacional:</strong> Automação de processos (atendimento eletrônico e fluxos de trabalho) e gestão de estoque.</li>
+        </ul>
+
+        <p>Estou em busca de novos desafios, em que possa aplicar meu perfil analítico para impulsionar a eficiência organizacional. Se conseguir me indicar para alguma vaga, ficarei muito grato.</p>
+    </div>
+
+    <a href="tiago.pdf" download class="btn btn-primary">
+        📄 Baixar Meu Currículo (PDF)
+    </a>
+</div>
+
+<script>
+    function copyPix() {
+        const pixText = document.getElementById('pixCode').innerText;
+        navigator.clipboard.writeText(pixText).then(() => {
+            const feedback = document.getElementById('feedback');
+            feedback.style.display = 'block';
+            setTimeout(() => {
+                feedback.style.display = 'none';
+            }, 2000);
+        });
+    }
+</script>
+
+</body>
+</html>
